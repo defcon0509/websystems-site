@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comments | Web Systems Site</title>
+  <link rel="stylesheet" href="websystems.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Kiana — Web Systems</h1>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="past.html">Past</a></li>
+          <li><a href="future.html">Future</a></li>
+          <li><a href="comments.html" aria-current="page" class="current">Comments</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container flow">
+    <article class="card">
+      <h2>Design and technical comments</h2>
+
+      <h3>Overall structure</h3>
+      <p>
+        Four HTML files (<code>index.html</code>, <code>past.html</code>, <code>future.html</code>,
+        <code>comments.html</code>) and one stylesheet (<code>websystems.css</code>) in the same folder.
+        Images are in <code>websystems/images/</code>. Each page repeats the same header, navigation, and footer
+        so the layout is consistent. Navigation is a semantic list inside a <code>&lt;nav&gt;</code>.
+      </p>
+
+      <h3>How pages interact</h3>
+      <p>
+        Navigation links connect all pages; the current page uses <code>aria-current="page"</code> and a
+        <code>.current</code> class for styling. If CSS is disabled, the site still works because links are plain text
+        anchors and layout is linear and readable.
+      </p>
+
+      <h3>Styles and selectors used</h3>
+      <table>
+        <caption>Key selectors and why they’re used</caption>
+        <thead>
+          <tr>
+            <th>Selector</th>
+            <th>Used on</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.nav a</code></td>
+            <td>Header menu links</td>
+            <td>Horizontal layout, spacing and focus/hover styles for accessibility</td>
+          </tr>
+          <tr>
+            <td><code>.current</code></td>
+            <td>Active nav link</td>
+            <td>Indicates the current page without relying on colour alone (underline &amp; weight)</td>
+          </tr>
+          <tr>
+            <td><code>#hero</code> (id)</td>
+            <td>Home page hero section</td>
+            <td>Distinct card styling to highlight the introduction</td>
+          </tr>
+          <tr>
+            <td><code>.card</code></td>
+            <td>Content panels</td>
+            <td>Consistent padding, border radius and subtle shadow</td>
+          </tr>
+          <tr>
+            <td><code>.btn</code></td>
+            <td>Text links styled as buttons</td>
+            <td>Clear call-to-action while remaining accessible links</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Accessibility and robustness</h3>
+      <ul>
+        <li>Meaningful alt text on images; images include width/height so pages don’t jump while loading.</li>
+        <li>Skip-link for keyboard users; visible focus styles; headings follow a logical order.</li>
+        <li>No external frameworks or imported styles. Works in modern browsers and remains usable with CSS off.</li>
+      </ul>
+
+      <h3>When CSS is turned off</h3>
+      <p>
+        Content reads top-to-bottom with the menu as a simple list. Because there are no background images, all text
+        remains readable. The site avoids layout that depends on CSS to make links or content discoverable.
+      </p>
+    </article>
+
+    <nav class="inline-nav">
+      <a class="btn" href="index.html">Back to Home</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2025 Kiana — Student work.</small>
+    </div>
+  </footer>
+</body>
+</html>
